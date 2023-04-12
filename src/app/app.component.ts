@@ -13,6 +13,7 @@ export class AppComponent implements OnInit{
 
   iconUrl: string = '';
   city: string = 'Tashkent';
+  cityName: string = '';
   units:string = 'metric';
   weatherImagesData : any;
   imagePath: string = '';
@@ -24,15 +25,14 @@ export class AppComponent implements OnInit{
   ngOnInit(): void {
     this.getWeatherDate(this.city);
     this.getWeatherImageDate(this.city);
-    this.city = ' ';
-    this.units = ' ';
+    this.city = '';
+
   }
 
   onSubmit(){
     this.getWeatherDate(this.city);
     this.getWeatherImageDate(this.city);
-    this.city = ' ';
-    this.units = ' ';
+    this.city = '';
   }
 
   private getWeatherDate(city: string){

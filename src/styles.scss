@@ -125,6 +125,7 @@ body{
   span{
     font-size: 1.8rem;
   }
+  
   img{
     position: static;
     width: 40px !important;
@@ -138,6 +139,7 @@ body{
   text-align: center;
   font-weight: 900;
 }
+
 .more-info-label{
   color: var(--white);
 }
@@ -200,3 +202,6 @@ body{
   width: 300px;
 }
 
+.cityName{
+  color: white;
+}
