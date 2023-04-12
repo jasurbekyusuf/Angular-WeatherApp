@@ -1,6 +1,5 @@
 import { Injectable } from '@angular/core';
-import { HttpClient, HttpHeaders, HttpParams } from '@angular/common/http';
-import { api } from '../constApi';
+import { HttpClient} from '@angular/common/http';
 import { WeatherData } from '../modules/weather.module';
 import { Observable } from 'rxjs';
 
