@@ -13,7 +13,6 @@ export class AppComponent implements OnInit{
 
   iconUrl: string = '';
   city: string = 'Tashkent';
-  cityName: string = '';
   units:string = 'metric';
   weatherImagesData : any;
   imagePath: string = '';
@@ -23,20 +22,19 @@ export class AppComponent implements OnInit{
   constructor(private weatherService: WeatherService){}
 
   ngOnInit(): void {
-    this.getWeatherDate(this.city);
-    this.getWeatherImageDate(this.city);
+    this.getWeatherDate(this.city, this.units);
+    this.getWeatherImageDate(this.city, this.units);
     this.city = '';
-
   }
 
   onSubmit(){
-    this.getWeatherDate(this.city);
-    this.getWeatherImageDate(this.city);
+    this.getWeatherDate(this.city, this.units);
+    this.getWeatherImageDate(this.city, this.units);
     this.city = '';
   }
 
-  private getWeatherDate(city: string){
-    this.weatherService.getweatherData(city)
+  private getWeatherDate(city: string , units: string){
+    this.weatherService.getweatherData(city, units)
     .subscribe({
       next:(response) => {
         this.weatherData = response;
@@ -46,12 +44,11 @@ export class AppComponent implements OnInit{
     })
   }
 
-  private getWeatherImageDate(city: string){
-    this.weatherService.getweatherData(city)
+  private getWeatherImageDate(city: string , units: string){
+    this.weatherService.getweatherData(city, units)
     .subscribe({
       next:(response) => {
         this.weatherData = response;
-        console.log(this.weatherData.weather[0].main)
         switch (this.weatherData.weather[0].main) {
           case "Clouds":
             this.imagePath = '../assets/cloud.jpg'
