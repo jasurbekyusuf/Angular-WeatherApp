@@ -7,8 +7,6 @@
 <div class="container" *ngIf="weatherData">
   <div class="upper-data">
     <img src="{{imagePath}}">
-
-    <!-- <img src="../assets/cloud.jpg"  *ngIf="weatherData.main.temp <= 15"> -->
   <div class="weather-data">
     <p class="weatherInfo">{{weatherInfo}}</p>
     <div class="location"><span>{{weatherData.name}}</span> <img src="{{iconUrl}}" alt="image"/></div>
